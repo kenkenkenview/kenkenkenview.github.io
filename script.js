@@ -1,9 +1,9 @@
 console.log('hello,world');
 const root = document.getElementById('root');
 root.innerHTML = `
-<input id="pokemonNo" type="number"></input>
+<input id="pokemonNo" placeholder = "Input Pokemon"></input>
 <br />
-<button id="pokemonBtn">GET POKEMON!</button>
+<button id="pokemonBtn">Get Pokemon!</button>
 <div id="nameJP"></div>
 <div id="nameEN"></div>
 <img id="pokemonImg" src=""></img>`;
@@ -18,7 +18,7 @@ async function getPokemon(){
     document.getElementById("nameJP").textContent = await resJPJson.names[0].name;
     document.getElementById("nameEN").textContent = await resJson.forms[0].name;
     console.log(resJPJson.names[0]);
-    pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${No}.png`;
+    pokemonImg.src = await resJson.sprites.other["official-artwork"].front_default;
 }
 
 document.getElementById("pokemonBtn").onclick = () => {
