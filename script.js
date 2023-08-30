@@ -1,6 +1,8 @@
-console.log('hello,world');
 const root = document.getElementById('root');
 root.innerHTML = `
+<div class="navbar bg-primary text-primary-content">
+  <a class="btn btn-ghost normal-case text-2xl">Welcome to kenkenkenview's homepage</a>
+</div>
 <input id="pokemonNo" placeholder = "Input Pokemon"></input>
 <br />
 <button id="pokemonBtn">Get Pokemon!</button>
@@ -17,7 +19,6 @@ async function getPokemon(){
     const resJPJson = await resJP.json();
     document.getElementById("nameJP").textContent = await resJPJson.names[0].name;
     document.getElementById("nameEN").textContent = await resJson.forms[0].name;
-    console.log(resJPJson.names[0]);
     pokemonImg.src = await resJson.sprites.other["official-artwork"].front_default;
 }
 
