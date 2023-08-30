@@ -1,3 +1,4 @@
+console.log('hello,world');
 const root = document.getElementById('root');
 root.innerHTML = `
 <input id="pokemonNo" type="number"></input>
@@ -16,7 +17,7 @@ async function getPokemon(){
     const resJPJson = await resJP.json();
     document.getElementById("nameJP").textContent = await resJPJson.names[0].name;
     document.getElementById("nameEN").textContent = await resJson.forms[0].name;
-    console.log(resJPJson.names[0])
+    console.log(resJPJson.names[0]);
     pokemonImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${No}.png`;
 }
 
